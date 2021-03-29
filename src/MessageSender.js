@@ -6,6 +6,11 @@ import VideocamIcon from "@material-ui/icons/Videocam";
 import PhotoLibraryIcon from "@material-ui/icons/PhotoLibrary";
 import InsertEmotionIcon from "@material-ui/icons/InsertEmoticon";
 
+//posten in firebase mogelijk maken
+import db from "./firebase";
+import firebase from "firebase";
+
+
 function MessageSender() {
 
     //States voor de FireBase
@@ -15,7 +20,19 @@ function MessageSender() {
     const handleSubmit = e => {
         e.preventDefault();
 
-        //Normally the database stuff-->try catch
+        //code toevoegen voor posten
+        db.collection('posts').add({
+            message: input,
+            timestamp: firebase.firestore.FieldValue.serverTimestamp(),
+            profilePic: null,
+            username: null,
+            image: imageUrl,
+            //deze info komt uit google account bij hem
+            //profilePic: user.photoURL,
+            //username: user.displayName,
+
+        })
+
         setInput("");
         setImageUrl("");
 

@@ -2,6 +2,12 @@ import React from 'react';
 import "./Header.css";
 import SearchIcon from "@material-ui/icons/Search";
 import HomeIcon from "@material-ui/icons/Home";
+import FlagIcon from "@material-ui/icons/Flag";
+
+import SubscriptionsOutlinedIcon from "@material-ui/icons/SubscriptionsOutlined";
+import StorefrontOutlinedIcon from "@material-ui/icons/StorefrontOutlined";
+import SupervisedUserCircleIcon from "@material-ui/icons/SupervisedUserCircle";
+
 import {DirectionsWalk} from "@material-ui/icons";
 import {DirectionsBike} from "@material-ui/icons";
 import {LocationCity} from "@material-ui/icons";
@@ -35,27 +41,25 @@ function Header() {
                     <HomeIcon fontSize="large" />
                 </div>
                 <div className="header_option">
-                    <DirectionsBike fontSize="large" />
+                    <FlagIcon fontSize="large" />
                 </div>
                 <div className="header_option">
-                    <LocationCity fontSize="large" />
+                    <SubscriptionsOutlinedIcon fontSize="large" />
                 </div>
                 <div className="header_option">
-                    <FilterHdr fontSize="large" />
+                    <StorefrontOutlinedIcon fontSize="large" />
                 </div>
                 <div className="header_option">
-                    <LocalDining fontSize="large" />
+                    <SupervisedUserCircleIcon fontSize="large" />
                 </div>
-                <div className="header_option">
-                    <DirectionsWalk fontSize="large" />
-                </div>
+
 
             </div>
 
             <div className="header_right">
                 <div className="header_info">
                     <Avatar />
-                    <h4>Vera den D</h4>
+                    <h4>Martin Peltzer</h4>
                 </div>
 
                 <IconButton>

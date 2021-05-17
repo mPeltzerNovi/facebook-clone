@@ -7,3 +7,5 @@
 //Firebase's Firestore realtime DB
 ///Firebase Hosting
 //Firebase Google Authentication (FULL LOGIN).
+
+//React flip move

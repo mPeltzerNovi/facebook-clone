@@ -12,8 +12,8 @@ import { ExpandMoreOutlined } from "@material-ui/icons";
 function Sidebar() {
     return (
         <div className="sidebar">
-            <SidebarRow src='https://i.pinimg.com/originals/e3/b3/74/e3b37464d3152cd99e0373e7880586c5.jpg'
-                        title='Vera den D' />
+            <SidebarRow src='https://dlmag.com/wp-content/uploads/2019/09/1796074_lotus_evija_uae_-_12.jpg'
+                        title='Martin Peltzer' />
             <SidebarRow Icon={LocalHospitalIcon} title="COVID-19 Information Center" />
             <SidebarRow Icon={EmojiFlagsIcon} title="Pages" />
             <SidebarRow Icon={PeopleIcon} title="Friends" />

@@ -9,9 +9,10 @@ import InsertEmotionIcon from "@material-ui/icons/InsertEmoticon";
 //posten in firebase mogelijk maken
 import db from "./firebase";
 import firebase from "firebase";
-
+import {useStateValue} from "./StateProvider";
 
 function MessageSender() {
+    const [{ user }, dispatch] = useStateValue();
 
     //States voor de FireBase
     const [input, setInput] = useState("");
@@ -24,12 +25,14 @@ function MessageSender() {
         db.collection('posts').add({
             message: input,
             timestamp: firebase.firestore.FieldValue.serverTimestamp(),
-            profilePic: null,
-            username: null,
+            profilePic: user.photoURL, //hier zat de fout! Voor andere build als experiment waarsch veranderd.
+            username: user.displayName, //idem het moet nu uit Google komen
             image: imageUrl,
-            //deze info komt uit google account bij hem
+            //deze info komt uit google account bij hem <--Hier staat het idd
             //profilePic: user.photoURL,
             //username: user.displayName,
+
+            //Nu werkt het idd. De Timestamp doet het nu ook goed!
 
         })
 
@@ -44,13 +47,13 @@ function MessageSender() {
     return (
         <div className='messageSender'>
             <div className="messageSender_top">
-                <Avatar />
+                <Avatar src={user.photoURL} />
                 <form>
                     <input
                         value={input}
                         onChange={(e) => setInput(e.target.value)}
                         className="messageSender_input"
-                        placeholder={`What's on your mind?`}
+                        placeholder={`What's on your mind, ${user.displayName}?`}
                     />
                     <input
                         value={imageUrl}

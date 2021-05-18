@@ -9,11 +9,19 @@ import StorefrontIcon from "@material-ui/icons/Storefront";
 import VideoLibraryIcon from "@material-ui/icons/VideoLibrary";
 import { ExpandMoreOutlined } from "@material-ui/icons";
 
+//hier dus ook die "useStateValue" importeren en dan constructen zodat je foto en naam op kan halen
+//Im mijn eerste build werkte het dus niet want je haalt dit allemaal van het google-account bij de login!
+//idem nu messageSender
+import { useStateValue } from "./StateProvider";
+
 function Sidebar() {
+    //Hier dus constructen
+    const [{ user }, dispatch] = useStateValue();
+
     return (
         <div className="sidebar">
-            <SidebarRow src='https://dlmag.com/wp-content/uploads/2019/09/1796074_lotus_evija_uae_-_12.jpg'
-                        title='Martin Peltzer' />
+            <SidebarRow src={user.photoURL}
+                        title={user.displayName} />
             <SidebarRow Icon={LocalHospitalIcon} title="COVID-19 Information Center" />
             <SidebarRow Icon={EmojiFlagsIcon} title="Pages" />
             <SidebarRow Icon={PeopleIcon} title="Friends" />
